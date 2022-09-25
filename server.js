@@ -18,6 +18,7 @@ app.use(express.json())
 // app.use("/", express.static(path.join(__dirname, "public")))
 app.use("/", require("./routes/root"))
 app.use("/events", require("./routes/eventRoutes"))
+app.use("/news", require("./routes/newsRoutes"))
 
 mongoose.connection.once("open", () => {
     console.log("Connected to MongoDB")

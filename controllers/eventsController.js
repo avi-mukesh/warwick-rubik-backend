@@ -5,9 +5,7 @@ const asyncHandler = require("express-async-handler")
 // @route GET /events
 // @access Private
 const getAllEvents = asyncHandler(async (req, res) => {
-    console.log("getting request")
     const events = await Event.find().lean()
-    console.log(events)
     if (!events?.length)
         return res.status(400).json({ message: "No events found" })
 
